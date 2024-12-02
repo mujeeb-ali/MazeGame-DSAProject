@@ -49,7 +49,9 @@ o	Activate the Dijkstra solver to find the shortest path.
 ________________________________________
 # Important Notes
 •	Ensure the project folder remains intact and files are not renamed or removed.
+
 •	The project requires a Java Runtime Environment (JRE) to execute compiled files.
+
 •	The game is optimized for both beginner and advanced users with scalable difficulty.
 ________________________________________
 # Project Links
