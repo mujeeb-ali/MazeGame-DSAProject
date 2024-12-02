@@ -27,6 +27,7 @@ ________________________________________
 2.	Import the project folder into the IDE.
 3.	Compile all the .java files.
 4.	Run the MazeGame class.
+   
 **Option 2: Using the Command Line**
 1.	Navigate to the project folder in the command prompt or terminal.
 2.	Compile all Java files:
