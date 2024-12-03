@@ -47,7 +47,7 @@ The Maze Game combines the power of **Data Structures and Algorithms** with a **
 1. Open a terminal or command prompt and navigate to the project folder.
 2. Compile all Java files:
    ```bash
-   javac *.java
+   javac MazeGame.java
    ```
 3. Run the main program:
    ```bash
