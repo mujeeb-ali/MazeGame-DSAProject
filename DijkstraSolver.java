@@ -1,5 +1,3 @@
-package DSA_Final_Project;
-
 import java.util.*;
 
 public class DijkstraSolver {

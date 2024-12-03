@@ -1,4 +1,3 @@
-package DSA_Final_Project;
 import javax.swing.*;
 
 public class MazeGame {
