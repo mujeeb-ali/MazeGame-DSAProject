@@ -12,14 +12,19 @@ ________________________________________
 **1.	Java Development Kit (JDK):**
 o	Ensure JDK 8 or higher is installed on your system.
 o	Add java and javac to your system's PATH environment variable.
+
 **2.	Required Files:**
 o	Download the project folder, which includes:
-	MazeGame.java
-	MazeGUI.java
-	DijkstraSolver.java
-	Maze.java
-	Levels.java
+	Cell.java 
+	MazeGame.java 
+	MazeGUI.java 
+	DijkstraSolver.java 
+	Maze.java 
+	Levels.java 
+	MazeGame.png 
+
 	Supporting .class files.
+and Name that Folder as DSA_Final_Project or remove this pakage name from above files.
 ________________________________________
 # Steps to Run
 **Option 1: Using an IDE**
