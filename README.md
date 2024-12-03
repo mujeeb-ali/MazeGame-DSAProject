@@ -15,13 +15,13 @@ o	Add java and javac to your system's PATH environment variable.
 
 **2.	Required Files:**
 o	Download the project folder, which includes:
-	Cell.java. 
-	MazeGame.java. 
-	MazeGUI.java.
-	DijkstraSolver.java. 
-	Maze.java. 
-	Levels.java. 
-	MazeGame.png. 
+.	Cell.java. 
+.	MazeGame.java. 
+.	MazeGUI.java.
+.	DijkstraSolver.java. 
+.	Maze.java. 
+.	Levels.java. 
+.	MazeGame.png. 
 
 	Supporting .class files.
 and Name that Folder as DSA_Final_Project or remove this pakage name from above files.
