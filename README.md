@@ -9,7 +9,6 @@ The Maze Game combines the power of **Data Structures and Algorithms** with a **
 - **Maze Generation**: Dynamically generates unique mazes for each gameplay session.
 - **Interactive GUI**: A user-friendly interface designed for seamless navigation and gameplay.
 - **Pathfinding**: Utilizes Dijkstra's algorithm to determine the shortest path in the maze.
-- **Difficulty Levels**: Offers scalable challenges for players of all skill levels.
 
 ---
 
