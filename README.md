@@ -29,9 +29,7 @@ The Maze Game combines the power of **Data Structures and Algorithms** with a **
      - `Levels.java`
      - `MazeGame.png`
      - Supporting `.class` files (if precompiled)
-
-   > **Note**: Name the folder `DSA_Final_Project`, or remove the `package` declarations in the Java files if you do not wish to use a specific package.
-
+  
 ---
 
 ## Steps to Run
