@@ -76,8 +76,6 @@ The Maze Game combines the power of **Data Structures and Algorithms** with a **
 ---
 
 ## Project Links
-- **GitHub Repository**: [Maze Game Repository](https://github.com/)  
-
-Enjoy exploring and solving mazes with the Maze Game! 🎮✨
+- **GitHub Repository**: [Maze Game Repository](https://github.com/mujeeb-ali/MazeGame-DSAProject-.git)  
 
 --- 
