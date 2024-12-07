@@ -56,11 +56,9 @@ The Maze Game combines the power of **Data Structures and Algorithms** with a **
 ## How to Play
 1. **Launch the Game**: 
    - Start the program to open the GUI.
-2. **Select a Difficulty Level**: 
-   - Choose from the available levels to set the challenge.
-3. **Navigate the Maze**:
+2. **Navigate the Maze**:
    - Use arrow keys to move through the maze in "Human Mode".
-4. **Automatic Solver**:
+3. **Automatic Solver**:
    - Switch to the "Let Computer Solve" mode to see Dijkstra's algorithm in action.
 
 ---
