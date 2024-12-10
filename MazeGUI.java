@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.HashMap;
 import java.util.Map;
+
 public class MazeGUI extends JFrame {
     private int[][] maze;
     private final int cellSize = 50;
@@ -26,7 +27,6 @@ public class MazeGUI extends JFrame {
     private int invalidMoveCounter = 0;
     private boolean gameStarted = false;
 
-
     public MazeGUI(Levels levels) {
         this.levels = levels;
         loadLevel();
@@ -37,7 +37,6 @@ public class MazeGUI extends JFrame {
         } catch (Exception e) {
             System.out.println("Error setting custom icon: " + e.getMessage());
         }
-
 
         // Setup the JFrame
         setTitle("Maze Solver");
@@ -94,11 +93,13 @@ public class MazeGUI extends JFrame {
                         // Track invalid moves
                         if (maze[newRow][newCol] == 2 || maze[newRow][newCol] == 1) {
                             invalidMoveCounts.putIfAbsent(new Cell(newRow, newCol, 0), 0);
-                            invalidMoveCounts.put(new Cell(newRow, newCol, 0), invalidMoveCounts.get(new Cell(newRow, newCol, 0)) + 1);
+                            invalidMoveCounts.put(new Cell(newRow, newCol, 0),
+                                    invalidMoveCounts.get(new Cell(newRow, newCol, 0)) + 1);
 
                             // Check if the invalid move count for the cell reaches 3
                             if (invalidMoveCounts.get(new Cell(newRow, newCol, 0)) >= 3) {
-                                JOptionPane.showMessageDialog(MazeGUI.this, "Too many invalid moves. Please try again!");
+                                JOptionPane.showMessageDialog(MazeGUI.this,
+                                        "Too many invalid moves. Please try again!");
                                 restartGame();
                             }
                         }
@@ -131,7 +132,8 @@ public class MazeGUI extends JFrame {
     // Check if user hasn't moved for 5 seconds
     private void checkInactivity() {
         // Timer should only act if the game is started and in human mode
-        if (gameStarted && isHumanMode && System.currentTimeMillis() - lastMoveTime > 5000) { // 5 seconds of inactivity
+        if (gameStarted && isHumanMode && !userPosition.equals(end)
+                && System.currentTimeMillis() - lastMoveTime > 5000) { // 5 seconds of inactivity
             JOptionPane.showMessageDialog(MazeGUI.this, "No movement detected for 5 seconds. Restarting the game.");
             restartGame();
         }
@@ -144,17 +146,17 @@ public class MazeGUI extends JFrame {
         repaint();
     }
 
-
     private boolean isValid(int row, int col) {
-        return row >= 0 && row < rows && col >= 0 && col < cols && maze[row][col] == 0; // Only allow movement into empty cells (0)
+        return row >= 0 && row < rows && col >= 0 && col < cols && maze[row][col] == 0; // Only allow movement into
+                                                                                        // empty cells (0)
     }
 
     // Restart the game
     private void restartGame() {
         loadLevel(); // Reload the level to reset the maze
-        repaint();   // Repaint the maze panel to reflect the changes
+        repaint(); // Repaint the maze panel to reflect the changes
         invalidMoveCounts.clear(); // Clear invalid move counts
-        invalidMoveCounter = 0;    // Reset invalid move counter
+        invalidMoveCounter = 0; // Reset invalid move counter
         lastMoveTime = System.currentTimeMillis(); // Reset inactivity timer
 
         // Reset the maze to clear all green cells (visited cells)
@@ -167,8 +169,6 @@ public class MazeGUI extends JFrame {
         }
     }
 
-
-
     private void solveMaze(MazePanel mazePanel) {
         isHumanMode = false; // Ensure we are not in human mode
         inactivityTimer.stop(); // Stop the inactivity timer for computer mode
@@ -178,13 +178,15 @@ public class MazeGUI extends JFrame {
         List<Cell> path = solver.solve(start, end);
         if (path.isEmpty()) {
             // If no path is found, show the "unsolvable" message and move to the next level
-            JOptionPane.showMessageDialog(this, "Sorry, this level cannot be solved.", "Level Unsolvable", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Sorry, this level cannot be solved.", "Level Unsolvable",
+                    JOptionPane.WARNING_MESSAGE);
             loadNextLevel(); // Automatically move to the next level
         } else {
             // If path is found, display the path and visualize it
             JOptionPane.showMessageDialog(this, "Path found! Visualizing...");
             mazePanel.drawPath(path);
-            // Wait for the visualization to complete before showing the congratulations message
+            // Wait for the visualization to complete before showing the congratulations
+            // message
             SwingUtilities.invokeLater(() -> {
                 JOptionPane.showMessageDialog(this, "Congratulations! You solved the maze!");
                 loadNextLevel(); // Load the next level after displaying the message
@@ -205,7 +207,6 @@ public class MazeGUI extends JFrame {
         inactivityTimer.start(); // Start the timer when human mode is started
         gameStarted = true; // Mark that the game has started
     }
-
 
     // Panel to draw the maze
     private class MazePanel extends JPanel {
@@ -232,7 +233,8 @@ public class MazeGUI extends JFrame {
             g.fillRect(end.col * cellSize, end.row * cellSize, cellSize, cellSize);
             if (userPosition != null) {
                 g.setColor(Color.ORANGE);
-                g.fillRect(userPosition.col * cellSize + 10, userPosition.row * cellSize + 10, cellSize - 20, cellSize - 20);
+                g.fillRect(userPosition.col * cellSize + 10, userPosition.row * cellSize + 10, cellSize - 20,
+                        cellSize - 20);
             }
         }
 
@@ -245,4 +247,3 @@ public class MazeGUI extends JFrame {
         }
     }
 }
-
